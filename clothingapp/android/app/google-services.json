@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "943483376752",
+    "project_id": "ecomm-shopping-app",
+    "storage_bucket": "ecomm-shopping-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943483376752:android:68e6866b1241f361bdd0b5",
+        "android_client_info": {
+          "package_name": "com.example.clothingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943483376752-pltjh1u7sdts3iq2k1gl5dflb6b9dq3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwoYnFTap1Ml9o8zk4d2565pvw1aBnMHQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943483376752-pltjh1u7sdts3iq2k1gl5dflb6b9dq3u.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "943483376752-qfl0t741jpu9kf6m9i2npdgasriajl2n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.clothingapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
