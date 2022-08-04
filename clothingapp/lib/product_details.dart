@@ -1,6 +1,8 @@
 import 'package:carousel_pro_nullsafety/carousel_pro_nullsafety.dart';
 import 'package:clothingapp/tabss/info.dart';
 import 'package:clothingapp/tabss/measurements.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -33,6 +35,18 @@ class _ProductDetailsState extends State<ProductDetails>
   }
 
   List product = [];
+
+  Future addToXart() async {
+    final FirebaseAuth _auth = FirebaseAuth.instance;
+    var currentUser = _auth.currentUser;
+    CollectionReference _collRef =
+        FirebaseFirestore.instance.collection("user-car-items");
+    return _collRef.doc(currentUser!.email).collection("items").doc().set({
+      "name": widget.product["product-name"],
+      "price": widget.product["product-price"],
+      "image": widget.product["product-imgs"][1],
+    }).then((value) => print("Added To Bag"));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -174,9 +188,20 @@ class _ProductDetailsState extends State<ProductDetails>
                     Measurements(),
                   ],
                 ),
-              )
+              ),
             ]),
           ),
+          ElevatedButton(
+            onPressed: () => addToXart(),
+            child: Text(
+              "Add To Bag",
+            ),
+            style: ElevatedButton.styleFrom(
+              fixedSize: Size(300.w, 60.h),
+              onPrimary: Colors.white,
+              primary: Color(0xffFE2550),
+            ),
+          )
         ]),
       ),
     );
