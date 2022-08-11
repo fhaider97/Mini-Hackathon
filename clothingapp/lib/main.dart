@@ -1,5 +1,7 @@
 import 'package:clothingapp/bottom_nav_controller.dart';
 import 'package:clothingapp/firebase_options.dart';
+import 'package:clothingapp/shop_now.dart';
+import 'package:clothingapp/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,7 +25,7 @@ class MyApp extends StatelessWidget {
               theme: ThemeData(
                 primarySwatch: Colors.blue,
               ),
-              home: BottomComtroller(),
+              home: const SplashScreen(),
             ));
   }
 }

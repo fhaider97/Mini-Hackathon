@@ -143,12 +143,12 @@ class _ProductDetailsState extends State<ProductDetails>
               ),
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height,
+          Container(
+            height: MediaQuery.of(context).size.height * 0.64,
             child: Column(children: [
               SizedBox(height: 10.h),
               SizedBox(
-                width: MediaQuery.of(context).size.height,
+                // width: MediaQuery.of(context).size.height,
                 child: Column(
                   children: [
                     Padding(
@@ -191,18 +191,32 @@ class _ProductDetailsState extends State<ProductDetails>
               ),
             ]),
           ),
-          ElevatedButton(
-            onPressed: () => addToXart(),
-            child: Text(
-              "Add To Bag",
-            ),
-            style: ElevatedButton.styleFrom(
-              fixedSize: Size(300.w, 60.h),
-              onPrimary: Colors.white,
-              primary: Color(0xffFE2550),
-            ),
-          )
+          // ElevatedButton(
+          //   onPressed: () => addToXart(),
+          //   child: Text(
+          //     "Add To Bag",
+          //   ),
+          //   style: ElevatedButton.styleFrom(
+          //     fixedSize: Size(300.w, 60.h),
+          //     onPrimary: Colors.white,
+          //     primary: Color(0xffFE2550),
+          //   ),
+          // )
         ]),
+      ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: ElevatedButton(
+          onPressed: () => addToXart(),
+          child: Text(
+            "Add To Bag",
+          ),
+          style: ElevatedButton.styleFrom(
+            fixedSize: Size(180.w, 60.h),
+            onPrimary: Colors.white,
+            primary: Color(0xffFE2550),
+          ),
+        ),
       ),
     );
   }

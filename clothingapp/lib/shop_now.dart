@@ -9,46 +9,50 @@ class ShopNow extends StatefulWidget {
 }
 
 class _ShopNowState extends State<ShopNow> {
-  PageController Controllerr = PageController();
+  PageController pageController = PageController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: PageView(
-        controller: Controllerr,
-        children: const [
+        controller: pageController,
+        children: [
           ShopNowWid(
               img: "assets/images/images1.png",
+              pageController: pageController,
               text1: "1",
               text2: "Jennifer Kingsley",
               text3: " exploring the",
               text4: "new range of winter fashion wear"),
           ShopNowWid(
               img: "assets/images/image02.png",
+              pageController: pageController,
               text1: "2",
               text2: "Jimmy Chuka",
               text3: " exploring new",
               text4: "spring sweater collection"),
           ShopNowWid(
               img: "assets/images/image03.png",
+              pageController: pageController,
               text1: "3",
               text2: "Christain Lobi ",
               text3: "showing us his new",
-              text4: "summer beach wears")
+              text4: "summer beach wears"),
         ],
       ),
-      bottomSheet: Container(
-          height: 40.h,
-          child: Center(
-              child: SmoothPageIndicator(
-            controller: Controllerr,
-            count: 3,
-            effect: const WormEffect(
-                dotWidth: 10.0,
-                dotHeight: 10.0,
-                spacing: 10,
-                paintStyle: PaintingStyle.stroke,
-                activeDotColor: Color.fromRGBO(254, 37, 80, 1)),
-          ))),
+      // bottomSheet: Container(
+      //     // color: Colors.red,
+      //     height: 40.h,
+      //     child: Center(
+      //         child: SmoothPageIndicator(
+      //       controller: Controllerr,
+      //       count: 3,
+      //       effect: const WormEffect(
+      //           dotWidth: 10.0,
+      //           dotHeight: 10.0,
+      //           spacing: 10,
+      //           paintStyle: PaintingStyle.stroke,
+      //           activeDotColor: Color.fromRGBO(254, 37, 80, 1)),
+      //     ))),
     );
   }
 }

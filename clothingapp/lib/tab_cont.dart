@@ -31,6 +31,7 @@ class _TabBarrrState extends State<TabBarrr>
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
+            automaticallyImplyLeading: false,
             title: ListTile(
               tileColor: Colors.white,
               leading:
@@ -67,10 +68,6 @@ class _TabBarrrState extends State<TabBarrr>
                         borderSide: const BorderSide(color: Colors.grey),
                       ),
                     ),
-                    // onTap: () {
-                    //   Navigator.push(context,
-                    //       MaterialPageRoute(builder: (_) => SearchScreen()));
-                    // }
                   ),
                 ),
               ),

@@ -1,19 +1,23 @@
 import 'dart:ui';
+import 'package:clothingapp/custom_widget/textt.dart';
 import 'package:clothingapp/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ShopNowWid extends StatelessWidget {
-  const ShopNowWid(
+  ShopNowWid(
       {Key? key,
       required this.img,
       required this.text1,
       required this.text2,
+      required this.pageController,
       required this.text3,
       required this.text4})
       : super(key: key);
   final String img;
   final String text1, text2, text3, text4;
+  PageController pageController;
 
 //   @override
 //   State<ShopNow> createState() => _ShopNowState();
@@ -138,6 +142,22 @@ class ShopNowWid extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),
                             )),
+                        SizedBox(height: 16),
+                        Container(
+                            // color: Colors.red,
+                            height: 40.h,
+                            child: Center(
+                                child: SmoothPageIndicator(
+                              controller: pageController,
+                              count: 3,
+                              effect: const WormEffect(
+                                  dotWidth: 10.0,
+                                  dotHeight: 10.0,
+                                  spacing: 10,
+                                  paintStyle: PaintingStyle.stroke,
+                                  activeDotColor:
+                                      Color.fromRGBO(254, 37, 80, 1)),
+                            ))),
                       ],
                     ),
                   ),

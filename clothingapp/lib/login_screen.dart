@@ -1,3 +1,4 @@
+import 'package:clothingapp/bottom_nav_controller.dart';
 import 'package:clothingapp/sign_up.dart';
 import 'package:clothingapp/tab_cont.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,7 +25,11 @@ class _LogInScreenState extends State<LogInScreen> {
       var authCredential = userCredential.user;
       print(authCredential!.uid);
       if (authCredential.uid.isNotEmpty) {
-        Navigator.push(context, MaterialPageRoute(builder: (_) => TabBarrr()));
+        //  Navigator.push(context, MaterialPageRoute(builder: (_) => TabBarrr()));
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => BottomComtroller()),
+            (Route<dynamic> route) => false);
       } else {
         Fluttertoast.showToast(msg: "Something is wrong");
       }
@@ -111,6 +116,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           width: 250.w,
                           child: TextField(
                             controller: _passCont,
+                            obscureText: true,
                             decoration: InputDecoration(
                               filled: true,
                               fillColor: Color.fromRGBO(240, 240, 240, 1),
@@ -147,6 +153,10 @@ class _LogInScreenState extends State<LogInScreen> {
                         ElevatedButton(
                             onPressed: () {
                               signIn();
+                              // Navigator.push(
+                              //     context,
+                              //     MaterialPageRoute(
+                              //         builder: (_) => BottomComtroller()));
                             },
                             style: ElevatedButton.styleFrom(
                                 fixedSize: Size(120, 40),

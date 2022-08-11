@@ -138,7 +138,7 @@ class _MeasurementsState extends State<Measurements> {
                 SizedBox(
                   width: 20.w,
                 ),
-                PinkButton(height1: 52.h, txt: "Add to Bag", width1: 200.w)
+                // PinkButton(height1: 52.h, txt: "Add to Bag", width1: 200.w)
               ],
             ),
           )
